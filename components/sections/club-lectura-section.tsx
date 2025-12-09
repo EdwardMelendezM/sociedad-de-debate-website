@@ -53,7 +53,6 @@ export default function ClubLecturaSection() {
     {length: firstDayOfMonth},
     () => null
   );
-
   days.push(...Array.from({length: daysInMonth}, (_, i) => i + 1));
   return (
     <main className="min-h-screen bg-white">
