@@ -49,9 +49,12 @@ export default function ClubLecturaSection() {
     },
   ]
 
-  const days = Array.from({ length: firstDayOfMonth }, () => null)
-  days.push(...Array.from({ length: daysInMonth }, (_, i) => i + 1))
+  const days: (number | null)[] = Array.from(
+    {length: firstDayOfMonth},
+    () => null
+  );
 
+  days.push(...Array.from({length: daysInMonth}, (_, i) => i + 1));
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
@@ -68,8 +71,10 @@ export default function ClubLecturaSection() {
       <section className="py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-gray-700 text-lg leading-relaxed max-w-3xl">
-            Nos reunimos regularmente para discutir libros seleccionados, explorar diferentes perspectivas y desarrollar
-            nuestro pensamiento analítico. Desde clásicos hasta novelas contemporáneas, cada sesión es un viaje hacia la
+            Nos reunimos regularmente para discutir libros seleccionados, explorar diferentes perspectivas y
+            desarrollar
+            nuestro pensamiento analítico. Desde clásicos hasta novelas contemporáneas, cada sesión es un
+            viaje hacia la
             comprensión más profunda de la literatura y la sociedad.
           </p>
         </div>
@@ -77,13 +82,17 @@ export default function ClubLecturaSection() {
 
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#030a50] mb-12 text-center">Calendario de Actividades</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#030a50] mb-12 text-center">Calendario de
+            Actividades</h2>
 
           <div className="bg-white rounded-lg shadow-lg p-8">
             {/* Calendar Header */}
             <div className="mb-8">
               <h3 className="text-2xl font-bold text-[#030a50] mb-2 text-center">
-                {new Date(currentYear, currentMonth).toLocaleString("es-ES", { month: "long", year: "numeric" })}
+                {new Date(currentYear, currentMonth).toLocaleString("es-ES", {
+                  month: "long",
+                  year: "numeric"
+                })}
               </h3>
             </div>
 
@@ -115,7 +124,8 @@ export default function ClubLecturaSection() {
                       {activitiesByDay[day] && (
                         <div className="space-y-1">
                           {activitiesByDay[day].map((activity, i) => (
-                            <p key={i} className="text-xs text-gray-700 leading-tight bg-[#be8a34]/10 p-1 rounded">
+                            <p key={i}
+                               className="text-xs text-gray-700 leading-tight bg-[#be8a34]/10 p-1 rounded">
                               {activity}
                             </p>
                           ))}
@@ -151,7 +161,8 @@ export default function ClubLecturaSection() {
                     className="object-cover hover:scale-105 transition duration-300"
                   />
                   {/* Platform Badge */}
-                  <div className="absolute top-3 right-3 bg-[#030a50] text-white px-3 py-1 rounded-full text-xs font-bold">
+                  <div
+                    className="absolute top-3 right-3 bg-[#030a50] text-white px-3 py-1 rounded-full text-xs font-bold">
                     {pub.platform}
                   </div>
                 </div>
@@ -162,7 +173,8 @@ export default function ClubLecturaSection() {
                   <p className="text-gray-700 text-sm mb-4 line-clamp-2">{pub.description}</p>
                   <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                     <span className="text-xs text-gray-500">{pub.date}</span>
-                    <a href="#" className="text-[#be8a34] font-semibold text-sm hover:text-[#a0773a] transition">
+                    <a href="#"
+                       className="text-[#be8a34] font-semibold text-sm hover:text-[#a0773a] transition">
                       Ver más →
                     </a>
                   </div>
@@ -172,16 +184,20 @@ export default function ClubLecturaSection() {
           </div>
 
           {/* Social Media Links */}
-          <div className="mt-16 bg-gradient-to-r from-[#030a50] to-[#0d1b5c] text-white rounded-lg p-12 text-center">
+          <div
+            className="mt-16 bg-gradient-to-r from-[#030a50] to-[#0d1b5c] text-white rounded-lg p-12 text-center">
             <h3 className="text-2xl font-bold mb-6">Síguenos para más contenido</h3>
             <div className="flex flex-wrap justify-center gap-6">
-              <a href="#" className="bg-white/20 hover:bg-white/30 px-6 py-3 rounded-lg font-semibold transition">
+              <a href="#"
+                 className="bg-white/20 hover:bg-white/30 px-6 py-3 rounded-lg font-semibold transition">
                 Facebook
               </a>
-              <a href="#" className="bg-white/20 hover:bg-white/30 px-6 py-3 rounded-lg font-semibold transition">
+              <a href="#"
+                 className="bg-white/20 hover:bg-white/30 px-6 py-3 rounded-lg font-semibold transition">
                 Instagram
               </a>
-              <a href="#" className="bg-white/20 hover:bg-white/30 px-6 py-3 rounded-lg font-semibold transition">
+              <a href="#"
+                 className="bg-white/20 hover:bg-white/30 px-6 py-3 rounded-lg font-semibold transition">
                 TikTok
               </a>
             </div>
